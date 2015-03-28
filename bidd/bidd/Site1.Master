@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site1.Master.cs" Inherits="bidd.Site1" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+
+
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />
+    <link href="css/Home.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <center>
+    <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
+        <div id="container"> 
+
+                <div class="MainHeader">
+
+                    <table>
+                                <tr>
+                                    <td>
+                                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="logo" ImageUrl="~/Images/images450SKLS2.jpg" NavigateUrl="~/Home.aspx">HyperLink</asp:HyperLink>
+                                    </td>
+                                    <td style="width:400px;">
+                                        <h1> Lets Bid.in</h1>
+                                    </td>
+                                    <td>
+                                        <asp:UpdatePanel ID="Update" runat="server">
+                                            <ContentTemplate>
+                                                <div style="font-size:28px;">
+                                                    <%=DateTime.Now.ToString("hh:mm:ss") %>
+                                                </div>
+                                            </ContentTemplate>
+                                            <Triggers>
+                                                <asp:AsyncPostBackTrigger ControlID="Timer1" 
+                                                     EventName="Tick" />
+                                            </Triggers>
+                                        </asp:UpdatePanel>
+                                        <asp:Timer ID="timer1" runat="server" Enabled="true" Interval="1000"></asp:Timer>
+                                    </td>
+                                </tr>
+                    </table>
+                    <div class="MenuContainer">
+                            <ul>
+                                    <li>
+                                     <asp:LinkButton ID="LinkButton1" runat="server" Text="Home" OnClick="btnLink1_Click1" style="text-decoration:none"></asp:LinkButton>
+                                     <div class="SubMenuContainer">
+
+                                         <ul>
+                                             <li>
+                                                
+                                                 <asp:LinkButton ID="btnlink7" runat="server" Text="Help" OnClick="btnlink7_Click"></asp:LinkButton>
+                                             </li>
+                                         </ul>
+                                     </div> 
+                                    </li>
+                                      <li>             
+                                      <asp:LinkButton ID="LinkButton2" runat="server" Text="AllCategories" OnClick="btnLink2_Click"></asp:LinkButton>
+                                          <div class="CategoryMenuContainer">
+                                              <ul>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink8" runat="server" Text="Mobiles & CellPhones" OnClick="btnlink8_Click"></asp:LinkButton>
+                                                  </li>
+                                                  
+                                                  
+                                                     <li>
+                                                  <asp:LinkButton ID="btnlink12" runat="server" Text="Bags & luggage" OnClick="btnlink12_Click"></asp:LinkButton>
+                                                      </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink13" runat="server" Text="Cameras & Accessories" OnClick="btnlink13_Click"></asp:LinkButton>
+                                                  </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink14" runat="server" Text="Laptops & Notebooks" OnClick="btnlink14_Click"></asp:LinkButton>
+                                                  </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink15" runat="server" Text="Books" OnClick="btnlink15_Click"></asp:LinkButton>
+                                                  </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink16" runat="server" Text="Computer & Pherripherals" OnClick="btnlink16_Click"></asp:LinkButton>
+                                                  </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink17" runat="server" Text="Eyewears" OnClick="btnlink17_Click"></asp:LinkButton>
+                                                  </li>
+                                                  <li>
+                                                      <asp:LinkButton ID="btnlink18" runat="server" Text="Ipods,MP3 & Audio" OnClick="btnlink18_Click"></asp:LinkButton>
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                          </li>
+                                               <li> 
+                                                    <asp:LinkButton ID="LinkButton3" runat="server" Text="Buy" OnClick="btnlink3_Click"></asp:LinkButton>
+                                                </li>
+                                     <li>
+                                                    <asp:LinkButton ID="LinkButton4" runat="server" Text="Sell" OnClick="btnLink4_Click"></asp:LinkButton>
+                                         </li>
+                                     <li>      
+                                                    <asp:LinkButton ID="LinkButton5" runat="server" Text="Contact us" OnClick="btnLink5_Click"></asp:LinkButton>
+                                         </li>   
+                            </ul>   
+                    </div>
+                </div>
+
+            <div>
+
+                <div class="ContentsContainerLeft" style="border-width: thin; border-style: dashed"></div>
+                <div class="ContentsContainerCenter">
+                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+                </div>
+                <div class="ContentsContainerRight" style="border-width:medium; border-style: solid">
+                    <marquee behaviour="scroll" direction="up" scrolldelay="0" onmouseover="this.stop()" onmouseout="this.start()"; style="font-family:Verdana; font-size="normal";>
+                        <strong> <a href ="Home.aspx">Latest auctions</a></strong>
+                        <br />
+                        Exclusive offers 
+                        <br />
+                        Auctions Ending Soon
+                    </marquee>
+                </div>
+
+            </div>
+    
+            
+        
+            <div class="footerDiv">
+                copyright & copy www.master.com.All rights reserved.
+            </div>
+    </div>
+    </form>
+    </center>
+</body>
+</html>
